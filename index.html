@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jxx.cc入口-导航、镜像与访问方式说明</title>
+<meta name="description" content="jxx.cc入口提供可核对的访问入口说明、镜像域名对照、登录异常排查与记录方式，按日期整理本周可用的入口清单与频道导航，适合需要稳定访问路径的用户参考。">
+<meta name="keywords" content="jxx.cc入口">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e3a4b'/%3E%3Cpath d='M16 20h14a12 12 0 0 1 0 24H16z' fill='none' stroke='%23f2b53c' stroke-width='5'/%3E%3Ccircle cx='46' cy='44' r='5' fill='%23f2b53c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#12222b;
+  --ink-2:#3c515c;
+  --ink-3:#6c818b;
+  --bg:#f6f4ef;
+  --panel:#ffffff;
+  --line:#dcd7cb;
+  --main:#0e3a4b;
+  --main-2:#16566d;
+  --accent:#c47a12;
+  --accent-soft:#fdf3e0;
+  --ok:#2c6e52;
+  --warn:#9a3b2c;
+  --r-sm:6px;
+  --r-md:10px;
+  --r-lg:16px;
+  --sh:0 1px 2px rgba(18,34,43,.06),0 6px 18px rgba(18,34,43,.06);
+  --sh-hover:0 2px 4px rgba(18,34,43,.08),0 10px 24px rgba(18,34,43,.10);
+  --ff:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --fs-12:12px;
+  --fs-13:13px;
+  --fs-14:14px;
+  --fs-15:15px;
+  --fs-16:16px;
+  --fs-18:18px;
+  --fs-20:20px;
+  --fs-24:24px;
+  --fs-30:30px;
+  --fs-38:38px;
+  --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;--sp-7:48px;--sp-8:64px;
+  --sticky:112px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;font-family:var(--ff);color:var(--ink);background:var(--bg);
+  font-size:var(--fs-16);line-height:1.75;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:var(--main-2);text-decoration:none;}
+a:hover{text-decoration:underline;}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700;}
+p{margin:0 0 var(--sp-3);}
+ul,ol{margin:0 0 var(--sp-3);padding-left:1.3em;}
+li{margin:0 0 var(--sp-1);}
+[id]{scroll-margin-top:var(--sticky);}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--sp-4);}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+/* 公告条 */
+.announce{
+  background:var(--main);color:#eaf2f5;font-size:var(--fs-13);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.announce .wrap{display:flex;gap:var(--sp-3);align-items:center;flex-wrap:wrap;padding-top:6px;padding-bottom:6px;}
+.announce .tag{
+  background:var(--accent);color:#20160a;font-weight:700;font-size:var(--fs-12);
+  padding:1px 8px;border-radius:999px;letter-spacing:.5px;white-space:nowrap;
+}
+.announce p{margin:0;color:#d6e5eb;}
+.announce strong{color:#fff;font-weight:600;}
+
+/* 页头 */
+header.site{
+  position:sticky;top:0;z-index:60;background:rgba(246,244,239,.96);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--line);
+}
+.head-bar{display:flex;align-items:center;gap:var(--sp-4);justify-content:space-between;padding:10px 0;}
+.brand{display:flex;align-items:center;gap:10px;flex:none;}
+.brand svg{width:40px;height:40px;flex:none;}
+.brand-name{font-size:var(--fs-20);font-weight:800;letter-spacing:.5px;color:var(--main);}
+.brand-name small{display:block;font-size:11px;font-weight:500;color:var(--ink-3);letter-spacing:1px;}
+nav.main-nav{display:flex;gap:var(--sp-4);flex-wrap:wrap;font-size:var(--fs-14);}
+nav.main-nav a{color:var(--ink-2);padding:4px 2px;border-bottom:2px solid transparent;}
+nav.main-nav a:hover,nav.main-nav a.active{color:var(--main);border-bottom-color:var(--accent);text-decoration:none;}
+.head-tools{display:flex;align-items:center;gap:var(--sp-2);}
+.search{display:flex;align-items:center;border:1px solid var(--line);background:#fff;border-radius:var(--r-sm);overflow:hidden;}
+.search input{border:0;padding:7px 10px;font:inherit;font-size:var(--fs-14);width:150px;outline:none;background:transparent;}
+.search button{border:0;background:var(--main);color:#fff;font:inherit;font-size:var(--fs-13);padding:7px 12px;cursor:pointer;}
+.search button:hover{background:var(--main-2);}
+.menu-btn{display:none;background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);padding:6px 10px;font:inherit;font-size:var(--fs-14);cursor:pointer;color:var(--main);}
+.menu-btn:focus-visible,.search button:focus-visible,.search input:focus-visible,nav.main-nav a:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #e0a44a;outline-offset:2px;}
+.search-result{font-size:var(--fs-13);color:var(--warn);padding:0 0 6px;display:none;}
+
+@media(max-width:860px){
+  .menu-btn{display:inline-block;}
+  nav.main-nav{display:none;width:100%;order:5;flex-direction:column;gap:2px;padding:6px 0 10px;border-top:1px solid var(--line);margin-top:6px;}
+  nav.main-nav.open{display:flex;}
+  .search input{width:110px;}
+  .head-bar{flex-wrap:wrap;}
+}
+
+/* 首屏 */
+.hero{
+  position:relative;overflow:hidden;color:#eaf2f5;
+  background:radial-gradient(120% 140% at 85% -10%,#1d6a85 0%,#0e3a4b 52%,#0a2a36 100%);
+  padding:var(--sp-7) 0 var(--sp-6);
+}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--sp-6);align-items:center;position:relative;z-index:2;}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;font-size:var(--fs-13);
+  border:1px solid rgba(242,181,60,.5);color:#f2cf94;padding:2px 10px;border-radius:999px;margin-bottom:var(--sp-3);
+}
+.hero-kicker i{width:6px;height:6px;border-radius:50%;background:var(--accent);display:block;}
+.hero h1{font-size:var(--fs-38);letter-spacing:1px;color:#fff;margin-bottom:var(--sp-3);}
+.hero-lead{font-size:var(--fs-16);color:#c8dde5;max-width:34em;margin-bottom:var(--sp-5);}
+.hero-actions{display:flex;gap:var(--sp-3);flex-wrap:wrap;margin-bottom:var(--sp-5);}
+.btn{display:inline-block;padding:9px 20px;border-radius:var(--r-sm);font-size:var(--fs-15);font-weight:600;border:1px solid transparent;transition:transform .15s ease,background .15s ease;}
+.btn:hover{text-decoration:none;transform:translateY(-2px);}
+.btn-primary{background:var(--accent);color:#20160a;}
+.btn-primary:hover{background:#d98c1f;}
+.btn-ghost{border-color:rgba(255,255,255,.45);color:#fff;}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08);}
+.hero-stats{display:flex;gap:var(--sp-5);flex-wrap:wrap;font-size:var(--fs-13);color:#a9c6d1;}
+.hero-stats b{display:block;font-size:var(--fs-20);color:#fff;line-height:1.2;}
+.hero-art{position:relative;min-height:260px;}
+.hero-art svg{width:100%;height:auto;display:block;}
+@media(max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;}
+  .hero h1{font-size:var(--fs-30);}
+  .hero-art{max-width:420px;}
+}
+
+/* 主体 */
+main{padding:var(--sp-7) 0;}
+.layout{display:grid;grid-template-columns:1fr 300px;gap:var(--sp-6);align-items:start;}
+@media(max-width:1024px){.layout{grid-template-columns:1fr;}}
+section.block{margin-bottom:var(--sp-7);}
+.block-head{display:flex;align-items:baseline;gap:var(--sp-3);flex-wrap:wrap;border-bottom:2px solid var(--main);padding-bottom:var(--sp-2);margin-bottom:var(--sp-4);}
+.block-head h2{font-size:var(--fs-24);color:var(--main);}
+.block-head .note{font-size:var(--fs-13);color:var(--ink-3);}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--sh);}
+
+/* 概览 */
+.overview{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--sp-4);}
+.overview .card{padding:var(--sp-4);}
+.odl{display:grid;grid-template-columns:auto 1fr;gap:6px var(--sp-3);font-size:var(--fs-14);margin:0;}
+.odl dt{color:var(--ink-3);white-space:nowrap;}
+.odl dd{margin:0;color:var(--ink-2);}
+@media(max-width:720px){.overview{grid-template-columns:1fr;}}
+
+/* 精选 */
+.picks{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-4);}
+@media(max-width:900px){.picks{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.picks{grid-template-columns:1fr;}}
+.pick{padding:var(--sp-4);display:flex;flex-direction:column;gap:var(--sp-2);transition:transform .15s ease,box-shadow .15s ease;}
+.pick:hover{transform:translateY(-3px);box-shadow:var(--sh-hover);}
+.pick .meta{font-size:var(--fs-12);color:var(--accent);font-weight:700;letter-spacing:.5px;}
+.pick h3{font-size:var(--fs-16);color:var(--ink);}
+.pick p{font-size:var(--fs-14);color:var(--ink-2);margin:0;}
+.pick .foot{font-size:var(--fs-12);color:var(--ink-3);margin-top:auto;padding-top:var(--sp-2);border-top:1px dashed var(--line);}
+
+/* 最新更新 列表 */
+.updates{list-style:none;padding:0;margin:0;}
+.updates li{display:grid;grid-template-columns:96px 1fr auto;gap:var(--sp-3);align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line);font-size:var(--fs-14);}
+.updates li:last-child{border-bottom:0;}
+.updates time{font-variant-numeric:tabular-nums;color:var(--accent);font-weight:700;font-size:var(--fs-13);}
+.updates .txt b{color:var(--ink);font-weight:600;}
+.updates .txt span{color:var(--ink-2);}
+.updates .src{font-size:var(--fs-12);color:var(--ink-3);white-space:nowrap;}
+@media(max-width:560px){.updates li{grid-template-columns:1fr;gap:2px;}.updates .src{justify-self:start;}}
+
+/* 分类入口 */
+.channels{display:flex;flex-wrap:wrap;gap:var(--sp-2);}
+.channels a{
+  display:inline-block;padding:6px 14px;border:1px solid var(--line);border-radius:999px;
+  background:#fff;font-size:var(--fs-14);color:var(--ink-2);
+}
+.channels a:hover{background:var(--accent-soft);border-color:var(--accent);color:var(--main);text-decoration:none;}
+.channels a b{color:var(--main);}
+
+/* 深度解析 */
+.analysis{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-lg);padding:var(--sp-5);box-shadow:var(--sh);}
+.analysis h2{font-size:var(--fs-24);color:var(--main);margin-bottom:var(--sp-2);}
+.analysis .standfirst{font-size:var(--fs-15);color:var(--ink-2);border-left:4px solid var(--accent);padding-left:var(--sp-3);margin-bottom:var(--sp-4);}
+.analysis h3{font-size:var(--fs-18);color:var(--main-2);margin:var(--sp-5) 0 var(--sp-2);}
+.analysis p{font-size:var(--fs-15);}
+.compare{width:100%;border-collapse:collapse;font-size:var(--fs-14);margin:var(--sp-3) 0;}
+.compare th,.compare td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;}
+.compare th{background:#eef3f5;color:var(--main);font-weight:700;}
+.compare td:first-child{font-weight:600;color:var(--ink-2);white-space:nowrap;}
+.timeline{list-style:none;padding:0;margin:var(--sp-3) 0;border-left:3px solid var(--line);}
+.timeline li{position:relative;padding:0 0 var(--sp-3) var(--sp-4);font-size:var(--fs-14);}
+.timeline li::before{content:"";position:absolute;left:-8px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:3px solid var(--panel);}
+.timeline time{color:var(--accent);font-weight:700;margin-right:6px;}
+.claim{background:var(--accent-soft);border:1px solid #efd9b0;border-radius:var(--r-md);padding:var(--sp-3) var(--sp-4);font-size:var(--fs-14);margin:var(--sp-3) 0;}
+.claim b{color:var(--main);}
+
+/* 体验指南 步骤 */
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:var(--sp-3);}
+.steps li{display:grid;grid-template-columns:36px 1fr;gap:var(--sp-3);align-items:start;background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:var(--sp-3) var(--sp-4);}
+.steps .num{width:30px;height:30px;border-radius:50%;background:var(--main);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:var(--fs-14);}
+.steps h3{font-size:var(--fs-15);margin-bottom:2px;}
+.steps p{font-size:var(--fs-14);color:var(--ink-2);margin:0;}
+
+/* FAQ */
+details.faq{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:0 var(--sp-4);margin-bottom:var(--sp-2);}
+details.faq summary{cursor:pointer;padding:var(--sp-3) 0;font-weight:600;font-size:var(--fs-15);color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:var(--sp-3);}
+details.faq summary::-webkit-details-marker{display:none;}
+details.faq summary::after{content:"＋";color:var(--accent);font-weight:700;flex:none;}
+details.faq[open] summary::after{content:"－";}
+details.faq .ans{padding:0 0 var(--sp-3);font-size:var(--fs-14);color:var(--ink-2);border-top:1px dashed var(--line);padding-top:var(--sp-3);}
+
+/* 评论 */
+.comments{display:grid;gap:var(--sp-3);}
+.comment{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:var(--sp-3) var(--sp-4);}
+.comment header{display:flex;gap:var(--sp-2);align-items:baseline;font-size:var(--fs-13);margin-bottom:4px;flex-wrap:wrap;}
+.comment .who{font-weight:700;color:var(--main);}
+.comment .when{color:var(--ink-3);}
+.comment .on{color:var(--accent);font-size:var(--fs-12);}
+.comment p{font-size:var(--fs-14);color:var(--ink-2);margin:0;}
+.comment.neg{border-left:3px solid var(--warn);}
+.comment.mid{border-left:3px solid var(--ink-3);}
+.comment.pos{border-left:3px solid var(--ok);}
+
+/* 资讯 */
+.news{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3);}
+@media(max-width:700px){.news{grid-template-columns:1fr;}}
+.news .card{padding:var(--sp-4);}
+.news h3{font-size:var(--fs-15);margin-bottom:var(--sp-1);}
+.news .date{font-size:var(--fs-12);color:var(--accent);font-weight:700;}
+.news p{font-size:var(--fs-14);color:var(--ink-2);margin:var(--sp-2) 0 0;}
+
+/* 推荐 */
+.tags{display:flex;flex-wrap:wrap;gap:var(--sp-2);}
+.tags a{padding:5px 12px;border-radius:var(--r-sm);background:#fff;border:1px solid var(--line);font-size:var(--fs-14);color:var(--ink-2);}
+.tags a:hover{background:var(--main);color:#fff;border-color:var(--main);text-decoration:none;}
+
+/* 侧栏 */
+aside.side{position:sticky;top:calc(var(--sticky) + 8px);display:grid;gap:var(--sp-4);}
+@media(max-width:1024px){aside.side{position:static;}}
+.side .card{padding:var(--sp-4);}
+.side h2{font-size:var(--fs-16);color:var(--main);margin-bottom:var(--sp-3);padding-bottom:var(--sp-2);border-bottom:1px solid var(--line);}
+.side-nav{list-style:none;padding:0;margin:0;font-size:var(--fs-14);}
+.side-nav a{display:block;padding:6px 8px;border-radius:var(--r-sm);color:var(--ink-2);border-left:3px solid transparent;}
+.side-nav a:hover{background:#eef3f5;text-decoration:none;}
+.side-nav a.hl{background:#eef3f5;color:var(--main);border-left-color:var(--accent);font-weight:600;}
+.level{list-style:none;padding:0;margin:0;font-size:var(--fs-13);}
+.level li{padding:8px 0;border-bottom:1px dashed var(--line);}
+.level li:last-child{border-bottom:0;}
+.level b{display:block;font-size:var(--fs-14);color:var(--ink);}
+.level span{color:var(--ink-3);}
+.level .dot{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;}
+
+/* 页尾 */
+footer.site{background:#0a2a36;color:#c0d4dc;margin-top:var(--sp-6);padding:var(--sp-7) 0 var(--sp-4);font-size:var(--fs-14);}
+footer.site .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:var(--sp-5);}
+@media(max-width:860px){footer.site .fgrid{grid-template-columns:1fr 1fr;}}
+@media(max-width:520px){footer.site .fgrid{grid-template-columns:1fr;}}
+footer.site h3{font-size:var(--fs-13);color:#fff;letter-spacing:1px;margin-bottom:var(--sp-2);}
+footer.site ul{list-style:none;padding:0;margin:0;}
+footer.site li{margin-bottom:4px;}
+footer.site a{color:#a9c6d1;font-size:var(--fs-13);}
+footer.site a:hover{color:#fff;}
+footer .fbrand{display:flex;align-items:center;gap:10px;margin-bottom:var(--sp-3);}
+footer .fbrand svg{width:34px;height:34px;}
+footer .fbrand b{font-size:var(--fs-18);color:#fff;}
+footer .fline{font-size:var(--fs-13);color:#8aa9b6;max-width:30em;}
+footer .bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:var(--sp-5);padding-top:var(--sp-3);display:flex;flex-wrap:wrap;gap:var(--sp-3);justify-content:space-between;font-size:var(--fs-12);color:#7d9cab;}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:18px;bottom:18px;z-index:70;width:44px;height:44px;border-radius:50%;
+  background:var(--main);color:#fff;border:1px solid rgba(255,255,255,.25);display:none;
+  align-items:center;justify-content:center;font-size:var(--fs-18);cursor:pointer;box-shadow:var(--sh-hover);
+}
+.to-top.show{display:flex;}
+@media(max-width:560px){.to-top{right:12px;bottom:12px;width:38px;height:38px;font-size:var(--fs-16);}}
+
+.quote{
+  border-left:4px solid var(--accent);background:#fbf7ef;padding:var(--sp-3) var(--sp-4);
+  font-size:var(--fs-14);color:var(--ink-2);border-radius:0 var(--r-md) var(--r-md) 0;margin:var(--sp-3) 0;
+}
+.quote cite{display:block;font-size:var(--fs-12);color:var(--ink-3);font-style:normal;margin-top:4px;}
+.small{font-size:var(--fs-13);color:var(--ink-3);}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *{transition:none!important;animation:none!important;}
+  .pick:hover,.btn:hover{transform:none;}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"jxx.cc入口",
+  "inLanguage":"zh-CN",
+  "description":"访问入口说明、镜像域名对照与访问异常排查的整理站点。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"jxx.cc入口打不开时先查什么","acceptedAnswer":{"@type":"Answer","text":"先确认本地网络能否解析域名，再对比备用镜像地址是否可用，最后检查浏览器是否拦截了混合内容。"}},
+    {"@type":"Question","name":"镜像站点和主站数据是否同步","acceptedAnswer":{"@type":"Answer","text":"多数镜像为定时同步，延迟从几分钟到数小时不等，账号状态的写入通常只落在主站。"}},
+    {"@type":"Question","name":"手机上访问入口需要注意哪些设置","acceptedAnswer":{"@type":"Answer","text":"关闭浏览器的流量节省模式，允许第三方 Cookie，并把站点加入白名单，避免跳转被拦截。"}},
+    {"@type":"Question","name":"入口变化通常提前多久公布","acceptedAnswer":{"@type":"Answer","text":"通常提前 6 至 12 小时在公告条与镜像页同步发布，紧急切换时只保留站内说明。"}}
+  ]
+}
+</script>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="announce" id="announce">
+  <div class="wrap">
+    <span class="tag">公告</span>
+    <p><strong>11月7日 22:10 更新：</strong>主入口 jxx.cc 已完成证书续期，有效期至 2027-02-04；备用线路 jx2 于 11月6日 09:30 起恢复，镜像同步间隔调整为 5 分钟。</p>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <div class="head-bar">
+      <a class="brand" href="/#top" aria-label="jxx.cc入口 首页">
+        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#0e3a4b"/>
+          <path d="M16 20h13a12 12 0 0 1 0 24H16z" fill="none" stroke="#f2b53c" stroke-width="5"/>
+          <circle cx="46" cy="44" r="5" fill="#f2b53c"/>
+          <path d="M40 18h10v10" fill="none" stroke="#8fc4d4" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">jxx.cc入口<small>访问路径整理</small></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">菜单</button>
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <a href="/#overview">入口概览</a>
+        <a href="/#picks">精选入口</a>
+        <a href="/#updates">更新记录</a>
+        <a href="/#channels">频道分类</a>
+        <a href="/#analysis">深度解析</a>
+        <a href="/#guide">使用指南</a>
+        <a href="/#faq">常见问题</a>
+      </nav>
+      <div class="head-tools">
+        <form class="search" id="searchForm" role="search">
+          <label class="sr" for="q">站内查找</label>
+          <input id="q" type="search" placeholder="查找入口或条目">
+          <button type="submit">查找</button>
+        </form>
+      </div>
+    </div>
+    <div class="search-result" id="searchResult" role="status" aria-live="polite"></div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="wrap">
+      <div>
+        <span class="hero-kicker"><i></i>2026-11-08 入口清单已校对</span>
+        <h1 id="heroTitle">jxx.cc入口</h1>
+        <p class="hero-lead">把访问路径拆成可核对的三件事：域名状态、镜像延迟、浏览器拦截。这里按日期记录主入口证书、备用线路和同步间隔，每条记录都带时间与来源，方便你在打不开时快速定位是哪一层出了问题。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#picks">查看本周可用入口</a>
+          <a class="btn btn-ghost" href="/#guide">排查打不开的四个步骤</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>12</b>个分类频道</div>
+          <div><b>5 分钟</b>镜像同步间隔</div>
+          <div><b>4 类</b>访问异常归因</div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 300" role="presentation">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#1d7c99"/>
+              <stop offset="1" stop-color="#0a2a36"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#f2b53c"/>
+              <stop offset="1" stop-color="#c47a12"/>
+            </linearGradient>
+          </defs>
+          <rect x="8" y="10" width="404" height="280" rx="20" fill="url(#g1)" opacity=".55"/>
+          <rect x="34" y="40" width="352" height="52" rx="10" fill="#0f3d4e" stroke="#3a7a8d"/>
+          <circle cx="60" cy="66" r="8" fill="#f2b53c"/>
+          <rect x="80" y="58" width="120" height="7" rx="3" fill="#8fc4d4"/>
+          <rect x="80" y="71" width="70" height="6" rx="3" fill="#3a7a8d"/>
+          <rect x="290" y="56" width="70" height="20" rx="10" fill="url(#g2)"/>
+          <path d="M52 118h316M52 152h316M52 186h316" stroke="#2f6577" stroke-width="1.5" stroke-dasharray="5 6"/>
+          <g>
+            <rect x="52" y="104" width="96" height="30" rx="8" fill="#144a5d" stroke="#3a7a8d"/>
+            <rect x="160" y="104" width="96" height="30" rx="8" fill="#144a5d" stroke="#3a7a8d"/>
+            <rect x="268" y="104" width="100" height="30" rx="8" fill="#144a5d" stroke="#3a7a8d"/>
+            <rect x="52" y="138" width="140" height="30" rx="8" fill="#144a5d" stroke="#3a7a8d"/>
+            <rect x="204" y="138" width="164" height="30" rx="8" fill="#144a5d" stroke="#3a7a8d"/>
+            <rect x="52" y="172" width="180" height="34" rx="8" fill="#16556a"/>
+            <rect x="244" y="172" width="124" height="34" rx="8" fill="#144a5d" stroke="#3a7a8d"/>
+          </g>
+          <circle cx="72" cy="189" r="6" fill="#8fc4d4"/>
+          <rect x="86" y="183" width="110" height="6" rx="3" fill="#a9c6d1"/>
+          <rect x="86" y="194" width="70" height="5" rx="2.5" fill="#3a7a8d"/>
+          <path d="M52 228h316" stroke="#2f6577" stroke-width="1.5"/>
+          <circle cx="60" cy="250" r="10" fill="none" stroke="#f2b53c" stroke-width="3"/>
+          <path d="M55 250l4 4 7-8" fill="none" stroke="#f2b53c" stroke-width="3" stroke-linecap="round"/>
+          <rect x="82" y="244" width="150" height="7" rx="3" fill="#8fc4d4"/>
+          <rect x="300" y="240" width="68" height="22" rx="11" fill="#0f3d4e" stroke="#3a7a8d"/>
+          <text x="334" y="255" text-anchor="middle" font-size="11" fill="#a9c6d1" font-family="sans-serif">同步中</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+      <div class="content">
+
+        <section class="block" id="overview" aria-labelledby="overviewTitle">
+          <div class="block-head">
+            <h2 id="overviewTitle">入口概况：域名、证书与线路</h2>
+            <span class="note">数据核对时间 2026-11-08 07:40</span>
+          </div>
+          <div class="overview">
+            <div class="card">
+              <p>当前主入口使用 HTTPS，证书签发机构为 Sectigo，链上共 2 张证书，到期日 2027-02-04。11月7日 22:10 完成续期后，Chrome 120 与 Edge 121 均未再出现 NET::ERR_CERT_DATE_INVALID。备用线路 jx2 于 11月6日 09:30 恢复，走独立 CDN 节点，测速中位延迟 64ms，主站同期为 48ms。</p>
+              <dl class="odl">
+                <dt>主入口</dt><dd>jxx.cc，TLS 1.3，HSTS 已开启</dd>
+                <dt>备用线路</dt><dd>jx2 镜像，同步间隔 5 分钟</dd>
+                <dt>写入范围</dt><dd>账号状态仅主站可写，镜像只读</dd>
+                <dt>记录方式</dt><dd>公告条 + 更新记录板块，带时间戳</dd>
+              </dl>
+            </div>
+            <div class="card">
+              <p class="small" style="margin-bottom:8px;">四类访问异常出现频次（样本：11月1日—11月8日站内反馈 218 条）</p>
+              <ul class="level">
+                <li><span class="dot" style="background:#2c6e52"></span><b>DNS 解析失败</b><span>91 条，占 41.7%，多见于运营商缓存</span></li>
+                <li><span class="dot" style="background:#c47a12"></span><b>证书告警</b><span>54 条，占 24.8%，11月7日后归零</span></li>
+                <li><span class="dot" style="background:#16566d"></span><b>镜像不同步</b><span>43 条，占 19.7%，集中在 jx1</span></li>
+                <li><span class="dot" style="background:#9a3b2c"></span><b>浏览器拦截</b><span>30 条，占 13.8%，多为广告插件</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="block" id="picks" aria-labelledby="picksTitle">
+          <div class="block-head">
+            <h2 id="picksTitle">精选入口与镜像对照</h2>
+            <span class="note">按可用状态排序，非排名</span>
+          </div>
+          <div class="picks">
+            <article class="pick card">
+              <span class="meta">主入口 · 在线</span>
+              <h3>jxx.cc 主站直连</h3>
+              <p>证书有效期至 2027-02-04，HSTS 已开启，支持账号写入。11月7日续期后复测通过，页面首字节 210ms。</p>
+              <span class="foot">核对时间 11-08 07:40</span>
+            </article>
+            <article class="pick card">
+              <span class="meta">备用 · 在线</span>
+              <h3>jx2 镜像线路</h3>
+              <p>同步间隔 5 分钟，只读。适合主站解析失败时临时查看内容，评论与收藏无法提交。</p>
+              <span class="foot">核对时间 11-08 07:42</span>
+            </article>
+            <article class="pick card">
+              <span class="meta">备用 · 限速</span>
+              <h3>jx1 镜像线路</h3>
+              <p>11月5日 14:00 起限速，同步延迟扩大到 3 小时，站内公告建议降级为备用之备用。</p>
+              <span class="foot">核对时间 11-08 07:45</span>
+            </article>
+            <article class="pick card">
+              <span class="meta">移动端 · 在线</span>
+              <h3>手机浏览器访问路径</h3>
+              <p>需关闭流量节省模式，允许第三方 Cookie。实测 iOS Safari 17.2 跳转正常，Android Chrome 120 需白名单。</p>
+              <span class="foot">核对时间 11-07 21:05</span>
+            </article>
+            <article class="pick card">
+              <span class="meta">排查 · 工具</span>
+              <h3>DNS 解析检测方法</h3>
+              <p>用 nslookup 对比公共 DNS 与运营商 DNS 的返回 IP，两者不一致时优先怀疑缓存，而非站点故障。</p>
+              <span class="foot">核对时间 11-06 10:20</span>
+            </article>
+            <article class="pick card">
+              <span class="meta">记录 · 归档</span>
+              <h3>入口变更历史时间线</h3>
+              <p>收录 2026 年 10月9日以来的 7 次线路调整，含每次切换的原因与持续时长，可按日期检索。</p>
+              <span class="foot">核对时间 11-06 18:00</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="block" id="updates" aria-labelledby="updatesTitle">
+          <div class="block-head">
+            <h2 id="updatesTitle">最新更新记录</h2>
+            <span class="note">每条含时间与来源</span>
+          </div>
+          <article class="card" style="padding:8px 20px;">
+            <ul class="updates">
+              <li>
+                <time datetime="2026-11-08">11-08 07:40</time>
+                <span class="txt"><b>主站证书复测通过</b> <span>三地节点均未出现日期告警。</span></span>
+                <span class="src">公告条</span>
+              </li>
+              <li>
+                <time datetime="2026-11-07">11-07 22:10</time>
+                <span class="txt"><b>证书续期完成</b> <span>Sectigo 签发，到期日 2027-02-04。</span></span>
+                <span class="src">运维记录</span>
+              </li>
+              <li>
+                <time datetime="2026-11-06">11-06 09:30</time>
+                <span class="txt"><b>jx2 镜像恢复</b> <span>同步间隔由 15 分钟调整为 5 分钟。</span></span>
+                <span class="src">线路面板</span>
+              </li>
+              <li>
+                <time datetime="2026-11-05">11-05 14:00</time>
+                <span class="txt"><b>jx1 镜像限速</b> <span>同步延迟扩大到 3 小时，建议降级使用。</span></span>
+                <span class="src">线路面板</span>
+              </li>
+              <li>
+                <time datetime="2026-11-03">11-03 16:45</time>
+                <span class="txt"><b>移动端跳转白名单说明补充</b> <span>针对 Android Chrome 120 的拦截问题。</span></span>
+                <span class="src">使用指南</span>
+              </li>
+              <li>
+                <time datetime="2026-10-29">10-29 11:20</time>
+                <span class="txt"><b>DNS 缓存问题集中反馈</b> <span>当日收到 37 条解析失败记录。</span></span>
+                <span class="src">反馈归档</span>
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="block" id="channels" aria-labelledby="channelsTitle">
+          <div class="block-head">
+            <h2 id="channelsTitle">频道分类入口</h2>
+            <span class="note">12 个频道，按内容主题划分</span>
+          </div>
+          <div class="channels">
+            <a href="/#analysis"><b>入口状态日报</b></a>
+            <a href="/#updates"><b>证书与域名记录</b></a>
+            <a href="/#guide"><b>打不开排查流程</b></a>
+            <a href="/#picks"><b>镜像线路对照</b></a>
+            <a href="/#analysis"><b>同步延迟观察</b></a>
+            <a href="/#faq"><b>DNS 缓存问答</b></a>
+            <a href="/#faq"><b>浏览器拦截说明</b></a>
+            <a href="/#guide"><b>手机访问设置</b></a>
+            <a href="/#comments"><b>访问反馈汇总</b></a>
+            <a href="/#news"><b>线路调整资讯</b></a>
+            <a href="/#more"><b>入口变更时间线</b></a>
+            <a href="/#more"><b>可信度分层表</b></a>
+          </div>
+        </section>
+
+        <section class="block" id="analysis" aria-labelledby="analysisTitle">
+          <div class="analysis">
+            <h2 id="analysisTitle">深度解析：镜像延迟不是越小越好</h2>
+            <p class="standfirst">一个可被反驳的判断：把镜像同步间隔从 15 分钟压到 5 分钟，在每日请求量 2 万次以下时收益接近零，却会让只读镜像的缓存命中率下降 11 个百分点。同步频率应当匹配写入频率，而不是追求最短延迟。</p>
+
+            <h3>判断的核对结构：三个可测指标</h3>
+            <p>把上面的结论拆开，可以逐项核对：一是镜像的写入事件占比，二是缓存命中率，三是主站与镜像的内容差异条数。三项都能从线路面板与站内记录里读到，不依赖主观感受。</p>
+            <table class="compare">
+              <caption class="sr">主站与两个镜像的指标对照</caption>
+              <thead>
+                <tr><th scope="col">指标</th><th scope="col">主站 jxx.cc</th><th scope="col">jx1 镜像</th><th scope="col">jx2 镜像</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>同步间隔</td><td>实时写入</td><td>15 分钟，11月5日起 3 小时</td><td>5 分钟</td></tr>
+                <tr><td>缓存命中率</td><td>—</td><td>78%</td><td>67%</td></tr>
+                <tr><td>内容差异条数</td><td>基准</td><td>0 至 4 条</td><td>0 至 2 条</td></tr>
+                <tr><td>中位延迟</td><td>48ms</td><td>71ms</td><td>64ms</td></tr>
+              </tbody>
+            </table>
+            <p>差异条数看起来 jx2 更好，但命中率从 78% 掉到 67%，意味着每次刷新更可能穿透到回源，单次访问的等待时间反而增加 12ms 到 20ms。对只读镜像而言，命中率是比差异条数更前置的体验指标。</p>
+
+            <h3>规则前后变化：11月6日的同步策略调整</h3>
+            <ul class="timeline">
+              <li><time datetime="2026-10-20">10-20</time>jx2 同步间隔为 15 分钟，与 jx1 一致，缓存命中率 76%。</li>
+              <li><time datetime="2026-11-05">11-05</time>jx1 因回源压力限速，延迟扩大到 3 小时，承担的分流从 35% 降到 12%。</li>
+              <li><time datetime="2026-11-06">11-06</time>jx2 同步间隔改为 5 分钟，承接 jx1 让出的流量，命中率降至 67%。</li>
+            </ul>
+            <p>这组变化说明：流量在两条镜像之间移动时，参数不是各自独立的。11月5日 jx1 限速后，jx2 的并发请求在 24 小时内上升了 2.3 倍，这才是间隔被压缩的直接原因，而不是用户对延迟的抱怨。</p>
+
+            <div class="claim">
+              <b>可被反驳的地方：</b>如果写入事件占比从当前的 3.1% 升到 10% 以上，5 分钟同步带来的差异条数下降就会盖过命中率损失，上面的结论不再成立。核对入口是站内的写入事件计数，每日 10:00 更新。
+            </div>
+
+            <h3>说法差异：公告条与用户反馈的不是同一件事</h3>
+            <p>公告条写“证书续期完成”，指的是签发与部署；用户反馈里 11月7日晚仍有 6 条“证书告警”，指向的是本地设备时间偏差与旧版浏览器缓存。两者时间重叠，但对象不同。把这两类记录混在一起讨论，会得出“续期无效”的错误结论。事实部分是签发机构与到期日，转述部分是用户描述，推测部分才是“用户设备时间错误”，这一条需要用户自行核对系统时间。</p>
+
+            <blockquote class="quote">
+              “11月6日改完 5 分钟后，jx2 面板的命中率曲线当天下午就往下掉，我们以为是统计口径变了，复核了三天才确认是同步频率的问题。”
+              <cite>—— 线路维护记录 2026-11-07，转述自运维值班表</cite>
+            </blockquote>
+          </div>
+        </section>
+
+        <section class="block" id="guide" aria-labelledby="guideTitle">
+          <div class="block-head">
+            <h2 id="guideTitle">体验指南：打不开时的四步排查</h2>
+            <span class="note">按顺序执行，多数情况在前两步解决</span>
+          </div>
+          <ol class="steps">
+            <li>
+              <span class="num">1</span>
+              <div><h3>确认域名解析返回</h3><p>用 nslookup 分别查询公共 DNS 与运营商 DNS。11月内 37 条解析失败记录中，有 29 条是运营商缓存尚未过期，等待 10 到 30 分钟后自愈。</p></div>
+            </li>
+            <li>
+              <span class="num">2</span>
+              <div><h3>对比备用镜像是否可开</h3><p>jx2 可用而主站不可用，问题基本在主站侧或本地网络到主站的链路；两者都不可用，优先怀疑本地网络与代理设置。</p></div>
+            </li>
+            <li>
+              <span class="num">3</span>
+              <div><h3>检查浏览器拦截与混合内容</h3><p>广告拦截插件会拦掉跳转脚本。Android Chrome 120 需把站点加入白名单，iOS Safari 17.2 需关闭“阻止跨站跟踪”再试。</p></div>
+            </li>
+            <li>
+              <span class="num">4</span>
+              <div><h3>核对系统时间与证书链</h3><p>设备时间偏差超过 5 分钟会触发证书日期告警。核对方式是看系统时间与网络时间是否一致，而不是反复刷新页面。</p></div>
+            </li>
+          </ol>
+          <p class="small" style="margin-top:12px;">上述步骤在关闭 JavaScript 的环境下同样适用，排查不依赖站内脚本。</p>
+        </section>
+
+        <section class="block" id="faq" aria-labelledby="faqTitle">
+          <div class="block-head">
+            <h2 id="faqTitle">常见问题</h2>
+            <span class="note">点击问题展开答案</span>
+          </div>
+          <details class="faq" open>
+            <summary>jxx.cc入口打不开时先查什么？</summary>
+            <div class="ans">先看域名解析是否返回。11月内 37 条解析失败记录里，29 条是运营商 DNS 缓存未过期，等待 10 到 30 分钟自愈；其余 8 条是本地代理设置导致请求未发出。确认解析正常后再对比备用镜像，能快速区分是站点问题还是链路问题。</div>
+          </details>
+          <details class="faq">
+            <summary>镜像站点的数据和主站同步到什么程度？</summary>
+            <div class="ans">jx2 每 5 分钟同步一次，内容差异通常在 0 至 2 条；jx1 自 11月5日限速后延迟扩大到 3 小时。账号状态、评论提交和收藏只落在主站，镜像只读，不会写入。</div>
+          </details>
+          <details class="faq">
+            <summary>手机访问入口需要改哪些设置？</summary>
+            <div class="ans">关闭浏览器的流量节省模式，允许第三方 Cookie。iOS Safari 17.2 需关闭“阻止跨站跟踪”，Android Chrome 120 需将站点加入白名单。设置完成后重新加载，跳转拦截通常消失。</div>
+          </details>
+          <details class="faq">
+            <summary>证书续期后为什么还看到告警？</summary>
+            <div class="ans">续期完成的是服务端证书链，告警若仍出现，多数来自本地设备时间偏差或旧版浏览器缓存。核对方式是看系统时间与网络时间是否一致，偏差超过 5 分钟就会触发日期告警。</div>
+          </details>
+          <details class="faq">
+            <summary>入口变化一般提前多久公布？</summary>
+            <div class="ans">常规调整提前 6 至 12 小时在公告条与镜像页同步发布；紧急切换只保留站内说明，待恢复后补记时间线。11月6日的 jx2 调整属于前者，11月5日的 jx1 限速属于后者。</div>
+          </details>
+          <details class="faq">
+            <summary>jx1 和 jx2 应该优先用哪条？</summary>
+            <div class="ans">当前优先 jx2。它的同步间隔 5 分钟、中位延迟 64ms，虽有 67% 的缓存命中率，但差异条数更少。jx1 在 11月5日 14:00 后限速，同步延迟 3 小时，应作为备用之备用。</div>
+          </details>
+        </section>
+
+        <section class="block" id="comments" aria-labelledby="commentsTitle">
+          <div class="block-head">
+            <h2 id="commentsTitle">访问者反馈</h2>
+            <span class="note">来自站内反馈归档，未做删改</span>
+          </div>
+          <div class="comments">
+            <article class="comment pos">
+              <header><span class="who">林间路由器</span><span class="when">11-08 08:12</span><span class="on">关于：主站证书复测</span></header>
+              <p>早上连了三次都正常，证书那块没再弹红。之前 11月7日晚上还在告警，估计就是本机时间慢了，校时后好了。</p>
+            </article>
+            <article class="comment neg">
+              <header><span class="who">巷口修表匠</span><span class="when">11-07 23:41</span><span class="on">关于：jx1 镜像限速</span></header>
+              <p>jx1 现在基本没法用，点开一个条目转半天。公告上说降级备用，可也没给个大概恢复时间，这点不太舒服。</p>
+            </article>
+            <article class="comment mid">
+              <header><span class="who">北纬三十一</span><span class="when">11-07 19:26</span><span class="on">关于：jx2 同步间隔</span></header>
+              <p>5 分钟同步是快了，但我刷的时候命中率数据看着降了。说不上好坏，只读看看内容够用了。</p>
+            </article>
+            <article class="comment">
+              <header><span class="who">旧手机用户</span><span class="when">11-06 15:03</span><span class="on">关于：手机浏览器访问</span></header>
+              <p>Android Chrome 按指南把站点加进白名单后能开了，之前一直卡在跳转那一步。流量节省模式也关了，不知道是哪个起的作用。</p>
+            </article>
+            <article class="comment neg">
+              <header><span class="who">纸飞机不飞</span><span class="when">11-05 21:50</span><span class="on">关于：DNS 解析</span></header>
+              <p>运营商 DNS 缓存这个说法我信，但等了半小时还是不行，最后换公共 DNS 才通。公告条里最好直接写清楚这段等待时间到底多久。</p>
+            </article>
+            <article class="comment mid">
+              <header><span class="who">半页草稿</span><span class="when">11-05 10:18</span><span class="on">关于：入口变更时间线</span></header>
+              <p>时间线做得挺细，10月9日那次切换的原因写清楚了。就是条目少，能不能把更早的记录也补上。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="block" id="news" aria-labelledby="newsTitle">
+          <div class="block-head">
+            <h2 id="newsTitle">相关资讯</h2>
+            <span class="note">按发布时间倒序</span>
+          </div>
+          <div class="news">
+            <article class="card">
+              <span class="date">11-07</span>
+              <h3>主站证书续期完成，HSTS 保持开启</h3>
+              <p>Sectigo 签发的新证书到期日为 2027-02-04，链上共 2 张。续期期间未观察到请求中断，三地节点复测通过。</p>
+            </article>
+            <article class="card">
+              <span class="date">11-06</span>
+              <h3>jx2 镜像恢复并缩短同步间隔</h3>
+              <p>从 15 分钟调整为 5 分钟，用于承接 jx1 限速后让出的分流。调整后 24 小时内并发上升 2.3 倍。</p>
+            </article>
+            <article class="card">
+              <span class="date">11-05</span>
+              <h3>jx1 镜像限速说明</h3>
+              <p>回源压力导致该线路同步延迟扩大到 3 小时，站内建议将其降级为备用之备用，优先使用 jx2。</p>
+            </article>
+            <article class="card">
+              <span class="date">11-03</span>
+              <h3>移动端跳转白名单补充说明</h3>
+              <p>针对 Android Chrome 120 的拦截行为，补充了白名单添加路径与验证方法，覆盖 iOS Safari 17.2 的对应设置。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="block" id="more" aria-labelledby="moreTitle">
+          <div class="block-head">
+            <h2 id="moreTitle">补充：可信度分层与时间线</h2>
+            <span class="note">同一条目只在一个层级出现</span>
+          </div>
+          <div class="card" style="padding:var(--sp-4);">
+            <ul class="level">
+              <li><span class="dot" style="background:#2c6e52"></span><b>已核对：带时间戳与来源</b><span>11月7日证书续期、11月6日 jx2 同步间隔调整、11月5日 jx1 限速。</span></li>
+              <li><span class="dot" style="background:#c47a12"></span><b>待确认：单方描述，缺第二来源</b><span>11月5日“换公共 DNS 才通”的用户反馈；11月7日晚 6 条证书告警的具体设备型号。</span></li>
+              <li><span class="dot" style="background:#9a3b2c"></span><b>推测：未获官方回应</b><span>jx1 限速是否与回源成本有关；jx2 命中率下降是否影响后续分流比例。</span></li>
+            </ul>
+          </div>
+          <h3 style="font-size:var(--fs-18);color:var(--main-2);margin:var(--sp-5) 0 var(--sp-2);">2026 年 10 月以来的线路时间线</h3>
+          <ul class="timeline">
+            <li><time datetime="2026-10-09">10-09</time>主入口切换至新 CDN 节点，中位延迟由 82ms 降到 55ms。</li>
+            <li><time datetime="2026-10-20">10-20</time>jx2 与 jx1 同步间隔统一为 15 分钟。</li>
+            <li><time datetime="2026-10-29">10-29</time>当日收到 37 条解析失败反馈，集中在两家运营商。</li>
+            <li><time datetime="2026-11-05">11-05</time>jx1 限速，同步延迟 3 小时。</li>
+            <li><time datetime="2026-11-06">11-06</time>jx2 恢复，同步间隔改为 5 分钟。</li>
+            <li><time datetime="2026-11-07">11-07</time>主站证书续期完成。</li>
+          </ul>
+        </section>
+
+        <section class="block" id="recommend" aria-labelledby="recTitle">
+          <div class="block-head">
+            <h2 id="recTitle">相关推荐</h2>
+            <span class="note">按主题聚合</span>
+          </div>
+          <div class="tags">
+            <a href="/#analysis">镜像同步延迟怎么测</a>
+            <a href="/#guide">运营商 DNS 缓存多久过期</a>
+            <a href="/#faq">HSTS 开启后还能降级吗</a>
+            <a href="/#updates">证书签发机构怎么核对</a>
+            <a href="/#picks">jx2 镜像线路状态</a>
+            <a href="/#guide">Android Chrome 白名单设置</a>
+            <a href="/#faq">入口变化提前多久公布</a>
+            <a href="/#comments">访问反馈归档</a>
+            <a href="/#more">线路调整时间线</a>
+            <a href="/#analysis">只读镜像的写入范围</a>
+          </div>
+          <div class="quote" style="margin-top:var(--sp-4)">
+            读者常问的两个组合场景：主站证书告警叠加 jx1 限速，以及移动端拦截叠加解析失败。前者先校时再换 jx2，后者先换公共 DNS 再加白名单，顺序反了会多花二十分钟。
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="side" aria-label="侧栏">
+        <div class="card">
+          <h2>栏目导航</h2>
+          <ul class="side-nav" id="sideNav">
+            <li><a href="/#overview">入口概况</a></li>
+            <li><a href="/#picks">精选入口</a></li>
+            <li><a href="/#updates">更新记录</a></li>
+            <li><a href="/#channels">频道分类</a></li>
+            <li><a href="/#analysis">深度解析</a></li>
+            <li><a href="/#guide">体验指南</a></li>
+            <li><a href="/#faq">常见问题</a></li>
+            <li><a href="/#comments">访问者反馈</a></li>
+            <li><a href="/#news">相关资讯</a></li>
+            <li><a href="/#more">可信度分层</a></li>
+            <li><a href="/#recommend">相关推荐</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>当前线路状态</h2>
+          <ul class="level">
+            <li><span class="dot" style="background:#2c6e52"></span><b>jxx.cc 主站</b><span>在线 · 证书有效至 2027-02-04</span></li>
+            <li><span class="dot" style="background:#2c6e52"></span><b>jx2 镜像</b><span>在线 · 同步 5 分钟 · 只读</span></li>
+            <li><span class="dot" style="background:#c47a12"></span><b>jx1 镜像</b><span>限速 · 同步 3 小时 · 只读</span></li>
+          </ul>
+          <p class="small" style="margin-top:10px;">状态核对时间 2026-11-08 07:45</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="fbrand">
+          <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#16566d"/>
+            <path d="M16 20h13a12 12 0 0 1 0 24H16z" fill="none" stroke="#f2b53c" stroke-width="5"/>
+            <circle cx="46" cy="44" r="5" fill="#f2b53c"/>
+          </svg>
+          <b>jxx.cc入口</b>
+        </div>
+        <p class="fline">整理域名、证书与镜像线路的可核对状态，按月归档访问异常记录；数据来自站内面板与用户反馈，未覆盖部分标注为待确认。</p>
+      </div>
+      <div>
+        <h3>入口记录</h3>
+        <ul>
+          <li><a href="/#overview">入口概况</a></li>
+          <li><a href="/#picks">精选入口</a></li>
+          <li><a href="/#updates">最新更新</a></li>
+          <li><a href="/#channels">频道分类</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>排查看法</h3>
+        <ul>
+          <li><a href="/#analysis">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#more">可信度分层</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>互动与归档</h3>
+        <ul>
+          <li><a href="/#comments">访问者反馈</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#recommend">相关推荐</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>示例数据说明：线路状态、延迟与反馈条数均为演示用途生成的条目，日期不晚于 2026-11-08；页脚更新时间 2026-11-08 07:45，对应正文“入口概况”与“最新更新记录”两条可核对项。</span>
+      <span>© 2026 访问路径整理 · 内容仅作信息参考</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuBtn');
+  var nav=document.getElementById('mainNav');
+  if(menuBtn&&nav){
+    menuBtn.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded',open?'true':'false');
+    });
+    nav.addEventListener('click',function(e){
+      if(e.target.tagName==='A'&&window.innerWidth<=860){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  var form=document.getElementById('searchForm');
+  var input=document.getElementById('q');
+  var result=document.getElementById('searchResult');
+  var sections=[].slice.call(document.querySelectorAll('main section.block'));
+  if(form&&input&&result){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var q=input.value.trim().toLowerCase();
+      if(!q){result.style.display='none';result.textContent='';return;}
+      var hits=[];
+      sections.forEach(function(sec){
+        if(sec.textContent.toLowerCase().indexOf(q)>-1){
+          var h=sec.querySelector('h2');
+          hits.push(h?h.textContent:'未命名板块');
+        }
+      });
+      if(hits.length){
+        result.style.color='#2c6e52';
+        result.textContent='找到 '+hits.length+' 个相关板块：'+hits.join('、');
+      }else{
+        result.style.color='#9a3b2c';
+        result.textContent='没有匹配“'+input.value.trim()+'”的板块，可试试“镜像”“证书”“解析”等词。';
+      }
+      result.style.display='block';
+    });
+  }
+
+  var toTop=document.getElementById('toTop');
+  if(toTop){
+    window.addEventListener('scroll',function(){
+      if(window.scrollY>600){toTop.classList.add('show');}
+      else{toTop.classList.remove('show');}
+    },{passive:true});
+    toTop.addEventListener('click',function(){
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  }
+
+  var links=[].slice.call(document.querySelectorAll('#sideNav a'));
+  var map={};
+  links.forEach(function(a){
+    var id=a.getAttribute('href').replace('/#','');
+    var el=document.getElementById(id);
+    if(el){map[id]=a;}
+  });
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        links.forEach(function(a){a.classList.remove('hl');});
+        var a=map[en.target.id];
+        if(a){a.classList.add('hl');}
+      }
+    });
+  },{rootMargin:'-140px 0px -55% 0px',threshold:0});
+  sections.forEach(function(s){obs.observe(s);});
+})();
+</script>
+</body>
+              </html>
