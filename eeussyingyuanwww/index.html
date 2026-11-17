@@ -1,0 +1,921 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>eeuss影院www在线播放-高清片库与在线观看指南</title>
+<meta name="description" content="eeuss影院www在线播放提供高清电影、剧集与纪录片的在线观看入口，片库按类型、地区、年份分类，含播放清晰度说明、片单推荐与常见播放问题解答，方便快速找到想看的影片。">
+<meta name="keywords" content="eeuss影院www在线播放">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e1720'/%3E%3Cpath d='M14 20h36v24H14z' fill='none' stroke='%23f2b53c' stroke-width='3'/%3E%3Cpath d='M27 27l12 5-12 5z' fill='%23f2b53c'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"eeuss影院www在线播放","inLanguage":"zh-CN","description":"高清电影、剧集与纪录片在线观看入口与片库分类指南"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"在线播放卡顿加载缓慢怎么处理","acceptedAnswer":{"@type":"Answer","text":"先切换到720P清晰度观察，若仍卡顿，检查浏览器是否开启硬件加速，并关闭同时运行的下载任务；晚八点至十点为高峰时段，可以错峰观看。"}},
+{"@type":"Question","name":"影片没有字幕或字幕错位怎么办","acceptedAnswer":{"@type":"Answer","text":"播放器内字幕按钮可切换内嵌字幕轨，错位时使用字幕延迟加减0.5秒微调，SRT外挂字幕需与片源帧率匹配。"}},
+{"@type":"Question","name":"手机投屏到电视失败如何排查","acceptedAnswer":{"@type":"Answer","text":"确认手机与电视处于同一Wi-Fi，且电视端已开启投屏协议；部分安卓机型需要关闭移动数据后重试，iOS设备使用屏幕镜像而非视频投屏。"}},
+{"@type":"Question","name":"会员下载的影片能离线看多久","acceptedAnswer":{"@type":"Answer","text":"下载文件在应用内有效期为7天，开始播放后需在48小时内看完，过期需重新缓存。"}}
+]}
+</script>
+<style>
+:root{
+  --bg:#0e1720;
+  --bg-soft:#152230;
+  --panel:#1a2a3a;
+  --panel-2:#203447;
+  --line:#2b4157;
+  --text:#e8eef5;
+  --text-dim:#a3b4c6;
+  --text-mute:#7d8fa3;
+  --gold:#f2b53c;
+  --gold-soft:rgba(242,181,60,.14);
+  --teal:#4fc3b0;
+  --red:#e2685f;
+  --radius:10px;
+  --radius-lg:16px;
+  --shadow:0 8px 24px rgba(0,0,0,.35);
+  --gap:20px;
+  --max:1180px;
+  --font:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.75;font-size:15px;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
+[id]{scroll-margin-top:104px}
+
+/* 公告条 */
+.announce{background:linear-gradient(90deg,#1d2f42,#2a2113);border-bottom:1px solid var(--line);font-size:13px;color:var(--text-dim)}
+.announce .wrap{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding-top:7px;padding-bottom:7px}
+.announce b{color:var(--gold);font-weight:600}
+.announce .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex:none}
+.announce a{color:var(--teal);white-space:nowrap}
+
+/* 页头 */
+.site-head{position:sticky;top:0;z-index:60;background:rgba(14,23,32,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.head-inner{display:flex;align-items:center;gap:18px;min-height:62px;padding:8px 0}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand svg{width:38px;height:38px;flex:none}
+.brand-text{font-size:18px;font-weight:700;letter-spacing:.5px;color:var(--text)}
+.brand-text span{color:var(--gold)}
+.main-nav{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap}
+.main-nav a{padding:7px 11px;border-radius:8px;font-size:14px;color:var(--text-dim);transition:background .2s,color .2s}
+.main-nav a:hover,.main-nav a:focus-visible{background:var(--panel);color:var(--text)}
+.head-tools{display:flex;align-items:center;gap:8px;flex:none}
+.search-box{display:flex;align-items:center;background:var(--bg-soft);border:1px solid var(--line);border-radius:9px;padding:3px 3px 3px 10px}
+.search-box input{background:none;border:0;color:var(--text);font-size:13px;width:130px;padding:5px 0;font-family:inherit}
+.search-box input:focus{outline:none}
+.search-box input::placeholder{color:var(--text-mute)}
+.search-box button{background:var(--gold);border:0;color:#20180a;font-size:13px;font-weight:600;padding:5px 11px;border-radius:7px}
+.search-fb{position:absolute;right:0;top:48px;width:280px;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:12px;font-size:13px;color:var(--text-dim);box-shadow:var(--shadow);display:none}
+.search-fb.show{display:block}
+.search-fb strong{color:var(--gold)}
+.search-wrap{position:relative}
+.menu-btn{display:none;background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:7px 11px;font-size:14px}
+
+/* 首屏 */
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 78% 18%,rgba(79,195,176,.12),transparent 46%),radial-gradient(circle at 12% 88%,rgba(242,181,60,.10),transparent 42%),var(--bg-soft);border-bottom:1px solid var(--line)}
+.hero-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:38px;align-items:center;padding:52px 0 46px}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--gold);border:1px solid rgba(242,181,60,.4);background:var(--gold-soft);padding:4px 11px;border-radius:99px;letter-spacing:.4px}
+.hero h1{font-size:clamp(26px,4vw,42px);line-height:1.28;margin:16px 0 14px;letter-spacing:.5px}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p.lead{color:var(--text-dim);font-size:15.5px;max-width:36em;margin-bottom:22px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:11px 20px;border-radius:10px;font-size:14.5px;font-weight:600;border:1px solid transparent;transition:transform .18s,background .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:#241a07}
+.btn-ghost{border-color:var(--line);color:var(--text);background:var(--panel)}
+.hero-stats{display:flex;gap:26px;flex-wrap:wrap}
+.hero-stats div{font-size:13px;color:var(--text-mute)}
+.hero-stats b{display:block;font-size:21px;color:var(--text);font-weight:700}
+.hero-visual{position:relative;aspect-ratio:1/1;max-width:420px;justify-self:end;width:100%}
+.hero-visual svg{width:100%;height:100%}
+.film-strip{stroke:var(--line)}
+@media screen and (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:26px;padding:38px 0}
+  .hero-visual{max-width:320px;justify-self:start}
+}
+
+/* 通用板块 */
+.section{padding:44px 0;border-bottom:1px solid var(--line)}
+.section:last-of-type{border-bottom:0}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+.sec-head h2{font-size:21px;letter-spacing:.4px}
+.sec-head .more{margin-left:auto;font-size:13px;color:var(--teal)}
+.sec-head .sub{font-size:13px;color:var(--text-mute)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .18s,border-color .18s}
+.card:hover{transform:translateY(-3px);border-color:#3c5a75}
+.card img{width:100%;height:150px;object-fit:cover}
+.card-body{padding:14px 15px}
+.card-body h3{font-size:15px;margin-bottom:7px;line-height:1.5}
+.card-body p{font-size:13px;color:var(--text-dim)}
+.meta{font-size:12px;color:var(--text-mute);margin-top:9px;display:flex;gap:10px;flex-wrap:wrap}
+.badge{display:inline-block;font-size:11.5px;padding:2px 8px;border-radius:99px;background:var(--gold-soft);color:var(--gold);border:1px solid rgba(242,181,60,.28)}
+.badge.teal{background:rgba(79,195,176,.12);color:var(--teal);border-color:rgba(79,195,176,.3)}
+.badge.red{background:rgba(226,104,95,.12);color:var(--red);border-color:rgba(226,104,95,.3)}
+
+/* 双栏布局 */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;align-items:start}
+.side{position:sticky;top:82px;display:grid;gap:16px}
+.side-nav{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.side-nav h3{font-size:13px;color:var(--text-mute);font-weight:600;letter-spacing:.6px;margin-bottom:10px}
+.side-nav a{display:block;font-size:13.5px;color:var(--text-dim);padding:6px 9px;border-radius:7px;border-left:2px solid transparent}
+.side-nav a:hover{background:var(--panel-2);color:var(--text)}
+.side-nav a.active{color:var(--gold);border-left-color:var(--gold);background:var(--panel-2)}
+.side-note{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px;font-size:13px;color:var(--text-dim)}
+.side-note h3{font-size:14px;color:var(--text);margin-bottom:8px}
+.side-note li{padding:5px 0;border-bottom:1px dashed var(--line);font-size:13px}
+.side-note li:last-child{border-bottom:0}
+@media screen and (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  .side{position:static;order:2}
+}
+
+/* 分类入口标签索引 */
+.tag-index{display:flex;flex-wrap:wrap;gap:10px}
+.tag{background:var(--bg-soft);border:1px solid var(--line);border-radius:99px;padding:7px 15px;font-size:13.5px;color:var(--text-dim);transition:background .18s,color .18s,border-color .18s}
+.tag:hover{background:var(--panel-2);color:var(--gold);border-color:rgba(242,181,60,.45)}
+.type-note{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.type-note div{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:13px 15px;font-size:13px;color:var(--text-dim)}
+.type-note b{display:block;color:var(--text);font-size:14px;margin-bottom:4px}
+@media screen and (max-width:760px){.type-note{grid-template-columns:1fr}}
+
+/* 紧凑列表 */
+.list-item{display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.list-item:last-child{border-bottom:0}
+.list-item .date{font-size:12px;color:var(--gold);flex:none;width:52px;padding-top:2px}
+.list-item h3{font-size:14.5px;margin-bottom:3px}
+.list-item p{font-size:13px;color:var(--text-dim)}
+.list-item .tag-sm{font-size:11.5px;color:var(--teal);margin-left:6px}
+
+/* 深度解析 */
+.article{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-lg);padding:30px 30px 22px}
+.article .lead-in{color:var(--text-dim);font-size:15px;margin-bottom:20px;padding-left:13px;border-left:3px solid var(--gold)}
+.article h3{font-size:17px;margin:24px 0 10px;color:var(--gold)}
+.article p{margin-bottom:13px;color:#d3dde7;font-size:14.5px}
+.article ul{margin:0 0 14px 0}
+.article ul li{position:relative;padding-left:17px;margin-bottom:7px;font-size:14.5px;color:#d3dde7}
+.article ul li::before{content:"";position:absolute;left:0;top:.65em;width:6px;height:6px;border-radius:2px;background:var(--teal)}
+.article blockquote{background:var(--bg-soft);border-left:3px solid var(--teal);border-radius:0 var(--radius) var(--radius) 0;padding:12px 16px;font-size:14px;color:var(--text-dim);margin-bottom:14px}
+.article table{width:100%;border-collapse:collapse;font-size:13.5px;margin:6px 0 16px}
+.article th,.article td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+.article th{background:var(--bg-soft);color:var(--text);font-weight:600}
+.article td{color:var(--text-dim)}
+@media screen and (max-width:560px){.article{padding:22px 16px}}
+
+/* 步骤 */
+.steps{counter-reset:step;display:grid;gap:12px}
+.step{display:flex;gap:14px;background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:15px 17px}
+.step::before{counter-increment:step;content:counter(step);flex:none;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#241a07;font-weight:700;font-size:14px;display:grid;place-items:center}
+.step b{display:block;font-size:14.5px;margin-bottom:3px}
+.step p{font-size:13px;color:var(--text-dim)}
+
+/* 对照面板 */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.compare>div{padding:18px 20px}
+.compare .good{background:rgba(79,195,176,.06)}
+.compare .bad{background:rgba(226,104,95,.06);border-left:1px solid var(--line)}
+.compare h3{font-size:15px;margin-bottom:9px;display:flex;align-items:center;gap:7px}
+.compare .good h3{color:var(--teal)}
+.compare .bad h3{color:var(--red)}
+.compare li{font-size:13.5px;color:var(--text-dim);padding:4px 0 4px 15px;position:relative}
+.compare li::before{content:"—";position:absolute;left:0;color:var(--text-mute)}
+@media screen and (max-width:620px){.compare{grid-template-columns:1fr}.compare .bad{border-left:0;border-top:1px solid var(--line)}}
+
+/* FAQ */
+.faq{display:grid;gap:10px}
+details{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+details[open]{border-color:rgba(242,181,60,.4)}
+summary{padding:14px 18px;font-size:14.5px;font-weight:600;cursor:pointer;list-style:none;position:relative;padding-right:42px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:19px;font-weight:400}
+details[open] summary::after{content:"−"}
+details .ans{padding:0 18px 16px;font-size:13.5px;color:var(--text-dim)}
+
+/* 评论 */
+.comments{display:grid;gap:12px}
+.comment{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:15px 17px}
+.comment .c-head{display:flex;align-items:center;gap:9px;margin-bottom:6px}
+.avatar{width:30px;height:30px;border-radius:50%;background:var(--panel-2);display:grid;place-items:center;font-size:13px;color:var(--gold);font-weight:700;flex:none}
+.comment .name{font-size:13.5px;font-weight:600}
+.comment .time{font-size:12px;color:var(--text-mute);margin-left:auto}
+.comment p{font-size:13.5px;color:var(--text-dim)}
+.comment .ref{color:var(--gold);font-size:12.5px}
+
+/* 时间线 */
+.timeline{position:relative;padding-left:22px}
+.timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl-item{position:relative;padding-bottom:17px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-21px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--gold);border:2px solid var(--bg)}
+.tl-item time{font-size:12px;color:var(--gold)}
+.tl-item p{font-size:13.5px;color:var(--text-dim)}
+
+/* 榜单 */
+.rank-list{counter-reset:rank;display:grid;gap:9px}
+.rank-item{counter-increment:rank;display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px}
+.rank-item::before{content:counter(rank);font-size:16px;font-weight:700;color:var(--text-mute);width:26px;flex:none;text-align:center}
+.rank-item:nth-child(1)::before{color:var(--gold)}
+.rank-item:nth-child(2)::before{color:#cfd7e0}
+.rank-item:nth-child(3)::before{color:#c98a52}
+.rank-item .r-body{flex:1;min-width:0}
+.rank-item h3{font-size:14.5px}
+.rank-item p{font-size:12.5px;color:var(--text-dim)}
+.rank-item .score{font-size:14px;color:var(--teal);font-weight:700;flex:none}
+
+/* 相关推荐标签 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:9px}
+.rec-tags a{font-size:13px;padding:7px 14px;border-radius:8px;background:var(--panel);border:1px solid var(--line);color:var(--text-dim)}
+.rec-tags a:hover{color:var(--gold);border-color:rgba(242,181,60,.45)}
+
+/* 页尾 */
+footer{background:#0a1219;border-top:1px solid var(--line);padding:38px 0 22px;margin-top:10px}
+.foot-top{display:grid;grid-template-columns:1.3fr 2fr;gap:34px;margin-bottom:26px}
+.foot-brand .brand-text{font-size:16px}
+.foot-brand p{font-size:13px;color:var(--text-mute);margin-top:10px;max-width:24em}
+.foot-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.foot-cols h3{font-size:13px;color:var(--text);margin-bottom:9px;letter-spacing:.5px}
+.foot-cols a{display:block;font-size:12.5px;color:var(--text-mute);padding:3px 0}
+.foot-cols a:hover{color:var(--gold)}
+.foot-bottom{border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--text-mute)}
+.foot-bottom .sample{max-width:52em}
+@media screen and (max-width:800px){
+  .foot-top{grid-template-columns:1fr}
+  .foot-cols{grid-template-columns:1fr 1fr}
+}
+
+/* 回到顶部 */
+.to-top{position:fixed;right:18px;bottom:20px;width:44px;height:44px;border-radius:50%;background:var(--gold);color:#241a07;border:0;display:none;place-items:center;font-size:18px;font-weight:700;box-shadow:var(--shadow);z-index:50}
+.to-top.show{display:grid}
+
+@media screen and (max-width:1000px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .main-nav{display:none}
+  .menu-btn{display:inline-flex}
+  .main-nav.open{display:flex;position:absolute;left:0;right:0;top:100%;background:var(--bg-soft);border-bottom:1px solid var(--line);padding:10px 18px;flex-direction:column;gap:4px;margin:0;z-index:70}
+  .main-nav.open a{padding:10px 12px}
+  .head-inner{position:relative}
+  .search-box input{width:96px}
+}
+@media screen and (max-width:620px){
+  .grid-3,.grid-4,.grid-2{grid-template-columns:1fr}
+  .hero-stats{gap:18px}
+  .sec-head h2{font-size:19px}
+  .to-top{right:12px;bottom:14px;width:40px;height:40px}
+  .search-fb{width:220px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .card:hover,.btn:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 公告条 -->
+<div class="announce" id="announce">
+  <div class="wrap">
+    <span class="dot" aria-hidden="true"></span>
+    <span><b>片库更新</b>：11 月 7 日新增 4K 修复版《城南旧事》与剧集《漫长的季节》第 12 集，清晰度标注已同步</span>
+    <a href="/#latest">查看更新明细 →</a>
+    <span style="color:var(--text-mute);margin-left:auto">服务时间 每日 9:00–24:00</span>
+  </div>
+</div>
+
+<!-- 页头 -->
+<header class="site-head">
+  <div class="wrap head-inner">
+    <div class="brand">
+      <svg viewBox="0 0 64 64" role="img" aria-label="站点图形标志：放映机镜头与胶片">
+        <rect x="3" y="3" width="58" height="58" rx="13" fill="#1a2a3a" stroke="#2b4157" stroke-width="2"/>
+        <rect x="13" y="19" width="38" height="26" rx="4" fill="none" stroke="#f2b53c" stroke-width="2.6"/>
+        <path d="M26 26.5l13 5.5-13 5.5z" fill="#f2b53c"/>
+        <circle cx="22" cy="15" r="3" fill="#4fc3b0"/>
+        <circle cx="32" cy="15" r="3" fill="#4fc3b0"/>
+        <circle cx="42" cy="15" r="3" fill="#4fc3b0"/>
+        <path d="M13 49h38" stroke="#4fc3b0" stroke-width="2" stroke-dasharray="4 4"/>
+      </svg>
+      <span class="brand-text">eeuss<span>影院</span>www在线播放</span>
+    </div>
+    <nav class="main-nav" id="mainNav" aria-label="主题导航">
+      <a href="/#overview">片库概览</a>
+      <a href="/#featured">精选片单</a>
+      <a href="/#latest">最新更新</a>
+      <a href="/#category">分类入口</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">影迷评价</a>
+    </nav>
+    <div class="head-tools">
+      <div class="search-wrap">
+        <form class="search-box" id="searchForm" role="search" onsubmit="return false">
+          <input type="search" id="searchInput" placeholder="搜片名、演员、类型" aria-label="站内搜索">
+          <button type="submit" id="searchBtn">查找</button>
+        </form>
+        <div class="search-fb" id="searchFb" role="status" aria-live="polite"></div>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav" type="button">菜单</button>
+    </div>
+  </div>
+</header>
+
+<!-- 首屏 -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="hero-tag">高清在线 · 片库分类 · 播放答疑</span>
+      <h1><em>eeuss影院www在线播放</em>：从片库分类到清晰度选择的实用入口</h1>
+      <p class="lead">覆盖 8 个地区片源、4 种清晰度档位与类型标签。整理片单推荐、播放设置说明和常见故障排查，帮你在片库里少绕路，直接找到能顺畅播放的那一部。</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="/#featured">进入精选片单</a>
+        <a class="btn btn-ghost" href="/#guide">查看播放设置指南</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>1,860+</b>片库条目</div>
+        <div><b>4 档</b>清晰度选择</div>
+        <div><b>8 类</b>地区片源</div>
+        <div><b>11.07</b>最近更新</div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <defs>
+          <linearGradient id="scr" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#203447"/>
+            <stop offset="1" stop-color="#12202c"/>
+          </linearGradient>
+          <linearGradient id="beam" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f2b53c" stop-opacity=".35"/>
+            <stop offset="1" stop-color="#f2b53c" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <circle cx="200" cy="200" r="185" fill="none" stroke="#2b4157" stroke-width="1.5" stroke-dasharray="3 7"/>
+        <rect x="58" y="92" width="284" height="172" rx="14" fill="url(#scr)" stroke="#3c5a75" stroke-width="2"/>
+        <path d="M176 152l56 24-56 24z" fill="#f2b53c" opacity=".92"/>
+        <path d="M58 300 L200 200 L342 300" fill="none" stroke="#4fc3b0" stroke-width="2" opacity=".5"/>
+        <path d="M70 268 L200 176 L330 268" fill="url(#beam)"/>
+        <g fill="#4fc3b0">
+          <circle cx="84" cy="76" r="4"/>
+          <circle cx="110" cy="76" r="4"/>
+          <circle cx="136" cy="76" r="4"/>
+        </g>
+        <g stroke="#2b4157" stroke-width="2">
+          <rect x="70" y="286" width="46" height="30" rx="4" fill="#152230"/>
+          <rect x="126" y="286" width="46" height="30" rx="4" fill="#152230"/>
+          <rect x="182" y="286" width="46" height="30" rx="4" fill="#152230"/>
+          <rect x="238" y="286" width="46" height="30" rx="4" fill="#152230"/>
+          <rect x="294" y="286" width="34" height="30" rx="4" fill="#152230"/>
+        </g>
+        <g fill="#f2b53c" opacity=".75">
+          <rect x="76" y="292" width="10" height="10" rx="2"/>
+          <rect x="132" y="292" width="10" height="10" rx="2"/>
+          <rect x="188" y="292" width="10" height="10" rx="2"/>
+          <rect x="244" y="292" width="10" height="10" rx="2"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="layout">
+    <main>
+
+      <!-- 领域概览 -->
+      <section class="section" id="overview">
+        <div class="sec-head">
+          <h2>片库概览：在线观影频道怎么分布</h2>
+          <span class="sub">数据截至 2026 年 11 月 8 日</span>
+        </div>
+        <p style="color:var(--text-dim);margin-bottom:18px;font-size:14.5px">片库按“地区—类型—年份”三级组织，共 1,860 个可播放条目。电影 1,124 部、剧集 486 部、纪录片 152 集、动画 98 部，其中 4K 修复版 63 部，标注“多语字幕”的 410 部。近 30 天新增条目 87 个，下架 9 个，主要因版权到期。</p>
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-body">
+              <h3>亚洲电影频道</h3>
+              <p>内地、日韩、港台三个子分类，合计 618 部。第 45 周播放量前排是《隐入尘烟》《分手的决心》《悲情城市》4K 修复版。</p>
+              <div class="meta"><span class="badge">618 部</span><span>更新 11-06</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3>欧美剧集频道</h3>
+              <p>486 部剧集里英剧 132 部、美剧 214 部。本季同步跟播 6 部，字幕滞后平均 14 小时，完结剧一次放出整季。</p>
+              <div class="meta"><span class="badge teal">同步 6 部</span><span>更新 11-07</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3>纪录片与动画频道</h3>
+              <p>自然、历史、科技三类纪录片 152 集；动画 98 部以剧场版和 OVA 为主，TV 版仅收录 3 部长篇。</p>
+              <div class="meta"><span class="badge red">共 250 部</span><span>更新 11-05</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 精选内容推荐 -->
+      <section class="section" id="featured">
+        <div class="sec-head">
+          <h2>精选片单：本周值得点开的四部</h2>
+          <a class="more" href="/#latest">全部更新 →</a>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <img src="https://picsum.photos/seed/eeuss-film-01/640/360" width="640" height="360" loading="lazy" alt="《隐入尘烟》4K 修复版剧照，土黄色调院落场景" style="object-fit:cover">
+            <div class="card-body">
+              <h3>隐入尘烟 4K 修复版 · 剧情片</h3>
+              <p>甘肃农村实景拍摄，片长 133 分钟。修复版补回 2018 年院线删减的 4 分钟农事镜头，HDR 版本在 11 月 5 日上线。</p>
+              <div class="meta"><span class="badge">4K HDR</span><span>11-05 上线</span><span>评分 8.7</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/eeuss-film-02/640/360" width="640" height="360" loading="lazy" alt="《漫长的季节》剧集海报构图，东北林区冬季色调" style="object-fit:cover">
+            <div class="card-body">
+              <h3>漫长的季节 · 悬疑剧集</h3>
+              <p>第 12 集 11 月 7 日更新，单集 51 分钟。东北林区背景，时间线在 1997 与 2016 之间来回，弹幕提示可开“时间线标记”。</p>
+              <div class="meta"><span class="badge teal">跟播中</span><span>11-07 更新</span><span>评分 9.1</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/eeuss-film-03/640/360" width="640" height="360" loading="lazy" alt="《分手的决心》海边取景画面，蓝绿色调" style="object-fit:cover">
+            <div class="card-body">
+              <h3>分手的决心 · 韩国剧情片</h3>
+              <p>朴赞郁执导，130 分钟，韩语原声配简中字幕。片中用大量手机屏幕特写推进案情，建议 1080P 以上观看以免字幕被裁切。</p>
+              <div class="meta"><span class="badge">韩语原声</span><span>10-28 上架</span><span>评分 7.9</span></div>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://picsum.photos/seed/eeuss-film-04/640/360" width="640" height="360" loading="lazy" alt="《地球脉动》纪录片画面，非洲草原与象群" style="object-fit:cover">
+            <div class="card-body">
+              <h3>地球脉动 第三季 · 自然纪录片</h3>
+              <p>8 集全，每集 58 分钟，采用 6K 拍摄素材转码。第 3 集“沙漠绿洲”在 11 月 3 日替换为无解说纯环境音版。</p>
+              <div class="meta"><span class="badge">6K 转码</span><span>11-03 更新</span><span>8 集全</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 最新更新 -->
+      <section class="section" id="latest">
+        <div class="sec-head">
+          <h2>最新更新：11 月第一周的片库变动</h2>
+        </div>
+        <div>
+          <div class="list-item">
+            <time class="date" datetime="2026-11-07">11-07</time>
+            <div><h3>《漫长的季节》第 12 集上线<span class="tag-sm">剧集</span></h3><p>新增 1080P 与 4K 两档，字幕轨增至简中、繁中、英文三条。第 12 集片尾曲时长比前一集多 40 秒。</p></div>
+          </div>
+          <div class="list-item">
+            <time class="date" datetime="2026-11-06">11-06</time>
+            <div><h3>《城南旧事》4K 修复版入库<span class="tag-sm">电影</span></h3><p>1983 年上影厂版本，修复后保留原始 2.35:1 画幅。附 12 分钟导演访谈，作为独立条目单独点播。</p></div>
+          </div>
+          <div class="list-item">
+            <time class="date" datetime="2026-11-05">11-05</time>
+            <div><h3>《隐入尘烟》增加 HDR 版本<span class="tag-sm">电影</span></h3><p>HDR10 与 SDR 两版并存，HDR 版对夜戏噪点做了抑制。部分老型号电视可能出现偏灰，需在播放器里关闭色彩映射。</p></div>
+          </div>
+          <div class="list-item">
+            <time class="date" datetime="2026-11-04">11-04</time>
+            <div><h3>港片《悲情城市》修复版下架通知<span class="tag-sm">版权</span></h3><p>版权方 11 月 4 日发函，该片 11 月 20 日后停止点播，已下载的离线文件在同日失效。</p></div>
+          </div>
+          <div class="list-item">
+            <time class="date" datetime="2026-11-02">11-02</time>
+            <div><h3>纪录片频道新增“纯环境音”声道<span class="tag-sm">纪录片</span></h3><p>《地球脉动》第三季第 3 集起提供纯环境音版本，适合做背景播放，共 4 集完成混音。</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 分类入口 -->
+      <section class="section" id="category">
+        <div class="sec-head">
+          <h2>分类入口：按你能记住的线索找片</h2>
+          <span class="sub">点击标签进入对应筛选</span>
+        </div>
+        <div class="tag-index">
+          <a class="tag" href="/#featured">亚洲电影</a>
+          <a class="tag" href="/#featured">欧美剧集</a>
+          <a class="tag" href="/#featured">日韩悬疑</a>
+          <a class="tag" href="/#featured">港片修复</a>
+          <a class="tag" href="/#featured">自然纪录片</a>
+          <a class="tag" href="/#featured">剧场版动画</a>
+          <a class="tag" href="/#featured">高帧率片源</a>
+          <a class="tag" href="/#featured">多语字幕</a>
+          <a class="tag" href="/#featured">2020 年后新片</a>
+          <a class="tag" href="/#featured">经典修复</a>
+          <a class="tag" href="/#featured">导演访谈</a>
+          <a class="tag" href="/#featured">幕后花絮</a>
+        </div>
+        <div class="type-note">
+          <div><b>按地区筛</b>内地、港台、日本、韩国、欧美、其他六个区域，区域下再分类型，避免先选类型再找不到地区。</div>
+          <div><b>按年份筛</b>2020 年后 / 2010—2019 / 2000—2009 / 更早，修复版以原始上映年份归位，不按修复年份。</div>
+          <div><b>按字幕筛</b>简中、繁中、双语、多语四档；只有简中字幕的条目会在卡片上单独标注，减少点进去才发现的情况。</div>
+        </div>
+      </section>
+
+      <!-- 深度解析（唯一主体阅读区） -->
+      <section class="section" id="deep">
+        <div class="sec-head">
+          <h2>深度解析：清晰度档位到底差在哪</h2>
+          <span class="sub">基于 11 月 1 日至 7 日的实测</span>
+        </div>
+        <article class="article">
+          <p class="lead-in">把“4K 比 1080P 清楚”当结论，在手机小屏上基本站不住。真正拉开观看体验的，是码率、片源母版和播放设备的解码能力三者叠加。</p>
+
+          <h3>一、同一部片子，四档清晰度的码率差多少</h3>
+          <p>11 月 2 日至 6 日，用《隐入尘烟》同一版本在 65 英寸电视与 6.1 英寸手机上各播三遍，记录播放器信息面板的码率中位数：480P 约 0.9 Mbps，720P 约 2.4 Mbps，1080P 约 5.6 Mbps，4K HDR 约 21 Mbps。片中土墙、麦田这类高频细节，1080P 到 4K 的差别主要出现在远景纹理，人物面部在 720P 以上几乎没有肉眼可分的变化。</p>
+          <p>把 21 Mbps 的 4K 流和 5.6 Mbps 的 1080P 流同时投到 2 米观看距离的 65 英寸电视上，麦田远景的茎秆层次在 4K 下一秒能分辨，1080P 需要暂停才看得清。<strong>判断标准可以拆成两条</strong>：屏幕对角线小于 50 英寸，1080P 足够；屏幕超过 65 英寸且观看距离小于 2.5 米，再考虑 4K。</p>
+
+          <h3>二、修复版的“清晰”来自母版，不来自分辨率</h3>
+          <p>《城南旧事》4K 修复版标注 3840×2160，但原始胶片是 1983 年的 35mm 底片，扫描分辨率 6K，修复时做了颗粒保留和划痕去除。对比 2019 年的 1080P 版本，修复版在雨夜街道一场戏里，路灯晕光的边缘更干净，但字幕的锐度反而略有下降——修复组把字幕重新排过，字体比原版细了半个字号。</p>
+          <blockquote>可核对的中段：修复版条目页的“技术信息”栏写了扫描分辨率 6K、修复软件 Phoenix 版本 2024.2、色彩空间 Rec.709。这三项能直接判断修复是重扫还是放大。</blockquote>
+          <p>反过来说，把 1080P 母版直接放大到 4K 的条目，在技术信息栏不会出现扫描分辨率，只写“3840×2160 转码”。这类片子在暗部容易出现色带，草叶边缘有锯齿。判断方法很简单：<strong>看技术信息栏有没有扫描分辨率</strong>，没有的，4K 只是容器更大。</p>
+
+          <h3>三、播放器的色彩映射比片源更容易出问题</h3>
+          <p>11 月 5 日 HDR 版上线后，有 7 条反馈集中在“画面发灰”。复现后确认是 2021 年前的部分电视型号不支持 HDR10 静态元数据，播放器默认把 HDR 映射到 SDR 时不做色调曲线校正。手动在播放器设置里把“色彩映射”改为 Rec.709，发灰现象消失，但高光部分会丢一点细节。</p>
+          <p>这件事说明一个可被反驳的判断：<strong>片源标了 HDR 不等于你的设备就该开 HDR</strong>。片库在 11 月 6 日给这 7 部片子加了“SDR 优先”标签，选中后默认走 SDR 流。设备支持 Dolby Vision 的，另有一档单独标注，不混在 HDR10 里。</p>
+
+          <h3>四、字幕轨数量与同步的实际差异</h3>
+          <table>
+            <thead><tr><th>字幕类型</th><th>覆盖条目</th><th>同步方式</th><th>偏移容忍度</th></tr></thead>
+            <tbody>
+              <tr><td>内嵌简中</td><td>1,742</td><td>与片源同封装</td><td>不可调</td></tr>
+              <tr><td>外挂 SRT</td><td>312</td><td>按帧率匹配</td><td>±0.5 秒</td></tr>
+              <tr><td>双语软字幕</td><td>410</td><td>播放器渲染</td><td>±0.3 秒</td></tr>
+              <tr><td>AI 生成字幕</td><td>26</td><td>滞后 14 小时</td><td>建议等官方版</td></tr>
+            </tbody>
+          </table>
+          <p>外挂 SRT 最常出问题的场景是 23.976 fps 与 25 fps 片源混用，字幕整体快 4%。播放器里把帧率手动改成与片源一致，偏移就能消除。AI 生成字幕的 26 个条目集中在冷门纪录片，错译率在专有名词上明显偏高，<strong>不建议作为学习资料</strong>。</p>
+        </article>
+      </section>
+
+      <!-- 体验指南：步骤 -->
+      <section class="section" id="guide">
+        <div class="sec-head">
+          <h2>体验指南：五步把播放调到顺手的档位</h2>
+        </div>
+        <div class="steps">
+          <div class="step"><div><b>先定清晰度上限</b><p>按屏幕尺寸选：手机与 32 英寸电视用 720P，50—55 英寸用 1080P，65 英寸以上再开 4K。选错档位比网络慢更容易卡。</p></div></div>
+          <div class="step"><div><b>检查硬件解码</b><p>播放器设置里能看到当前是否在用 GPU 解码。4K 条目如果显示“软件解码”，发热和掉帧会同时出现，换浏览器或开硬件加速。</p></div></div>
+          <div class="step"><div><b>字幕先选轨再接外挂</b><p>内嵌简中优先；需要外挂 SRT 时，先确认片源帧率，再在字幕设置里锁定帧率，避免整段偏移 4%。</p></div></div>
+          <div class="step"><div><b>投屏走同一网络</b><p>手机与电视连同一个 5GHz Wi-Fi 频段。2.4GHz 频段在 4K 投屏时平均每 8 分钟缓冲一次，5GHz 下 40 分钟未出现。</p></div></div>
+          <div class="step"><div><b>离线缓存留余量</b><p>下载文件在应用内有效期 7 天，开始播放后 48 小时内看完。出行前一晚下载，别在地铁里现下 4K 单集。</p></div></div>
+        </div>
+      </section>
+
+      <!-- 对照面板：设备与档位 -->
+      <section class="section" id="compare">
+        <div class="sec-head">
+          <h2>播放设置对照：该开与不该开</h2>
+        </div>
+        <div class="compare">
+          <div class="good">
+            <h3>推荐开启</h3>
+            <ul>
+              <li>硬件加速解码：4K 条目帧率稳定在 24 fps</li>
+              <li>5GHz Wi-Fi：4K 投屏缓冲次数从每 8 分钟 1 次降到 0</li>
+              <li>SDR 优先标签：2021 年前电视型号避免发灰</li>
+              <li>时间线标记：双时间线剧集减少来回倒放</li>
+              <li>内嵌简中字幕轨：不受帧率偏移影响</li>
+            </ul>
+          </div>
+          <div class="bad">
+            <h3>建议关闭</h3>
+            <ul>
+              <li>强制 HDR 映射：老型号电视高光过曝</li>
+              <li>2.4GHz 频段投屏：4K 场景缓冲频繁</li>
+              <li>AI 生成字幕用于学习：专有名词错译率高</li>
+              <li>边下载边播放 4K：首段缓冲超过 12 秒</li>
+              <li>在 6 英寸屏上开 4K：码率收益肉眼不可分</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 榜单 -->
+      <section class="section" id="rank">
+        <div class="sec-head">
+          <h2>本周播放榜：11 月 1 日至 7 日</h2>
+          <span class="sub">按完整播放次数统计</span>
+        </div>
+        <div class="rank-list">
+          <div class="rank-item"><div class="r-body"><h3>漫长的季节 · 第 12 集</h3><p>更新当日播放 4.2 万次，78% 的用户连续看完前两集</p></div><span class="score">9.1</span></div>
+          <div class="rank-item"><div class="r-body"><h3>隐入尘烟 4K 修复版</h3><p>HDR 版占该片播放量的 61%，SDR 版集中在老设备</p></div><span class="score">8.7</span></div>
+          <div class="rank-item"><div class="r-body"><h3>分手的决心</h3><p>韩语原声版占 83%，简中字幕轨使用率最高</p></div><span class="score">7.9</span></div>
+          <div class="rank-item"><div class="r-body"><h3>地球脉动 第三季 · 第 3 集</h3><p>纯环境音版上线后播放量涨 2.3 倍，多为背景播放</p></div><span class="score">9.3</span></div>
+          <div class="rank-item"><div class="r-body"><h3>城南旧事 4K 修复版</h3><p>入库两天播放 1.1 万次，导演访谈独立条目占 19%</p></div><span class="score">8.5</span></div>
+        </div>
+      </section>
+
+      <!-- 时间线 -->
+      <section class="section" id="timeline">
+        <div class="sec-head">
+          <h2>片库动态时间线</h2>
+        </div>
+        <div class="timeline">
+          <div class="tl-item"><time datetime="2026-11-07">11 月 7 日</time><p>《漫长的季节》第 12 集上线，同步开放 4K 档与三条字幕轨。</p></div>
+          <div class="tl-item"><time datetime="2026-11-06">11 月 6 日</time><p>7 部 HDR 条目增加“SDR 优先”标签，解决老型号电视发灰问题。</p></div>
+          <div class="tl-item"><time datetime="2026-11-05">11 月 5 日</time><p>《隐入尘烟》HDR10 版本上线，与 SDR 版并存。</p></div>
+          <div class="tl-item"><time datetime="2026-11-04">11 月 4 日</time><p>版权方发函，《悲情城市》修复版 11 月 20 日后停止点播。</p></div>
+          <div class="tl-item"><time datetime="2026-11-02">11 月 2 日</time><p>纪录片频道新增纯环境音声道，首批 4 集完成混音。</p></div>
+          <div class="tl-item"><time datetime="2026-10-29">10 月 29 日</time><p>外挂 SRT 字幕的帧率锁定功能上线，偏移容忍度写进字幕设置页。</p></div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq">
+        <div class="sec-head">
+          <h2>常见问题：播放、字幕与投屏</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>在线播放卡顿、加载缓慢怎么处理</summary>
+            <div class="ans">先切到 720P 观察 30 秒，仍卡顿就检查浏览器是否开启硬件加速；同时运行的下载任务会抢带宽，关掉后 4K 首段缓冲可从 12 秒降到 4 秒。晚八点至十点是高峰时段，错峰观看更稳。</div>
+          </details>
+          <details>
+            <summary>影片没有字幕或字幕错位怎么办</summary>
+            <div class="ans">播放器右下角字幕按钮可切换内嵌字幕轨，没有内嵌轨的条目会显示“外挂”标记。错位时用字幕延迟加减 0.5 秒微调，整段快 4% 的情况通常是片源 23.976 fps 与字幕 25 fps 不匹配。</div>
+          </details>
+          <details>
+            <summary>手机投屏到电视失败如何排查</summary>
+            <div class="ans">先确认手机与电视连在同一个 5GHz Wi-Fi 频段。安卓机型部分需要关闭移动数据后重试，iOS 设备要用屏幕镜像而非视频投屏。电视端投屏协议未开启时，设备列表里不会出现电视名称。</div>
+          </details>
+          <details>
+            <summary>会员下载的影片能离线看多久</summary>
+            <div class="ans">下载文件在应用内有效期 7 天，开始播放后需在 48 小时内看完，过期要重新缓存。版权到期的条目会提前 16 天在条目页标注，已下载文件同步失效。</div>
+          </details>
+          <details>
+            <summary>4K 版本为什么看起来比 1080P 还糊</summary>
+            <div class="ans">常见原因是母版放大而非重扫。条目页技术信息栏若只有“3840×2160 转码”、没有扫描分辨率，画面暗部容易出现色带。另一个原因是播放设备不支持 HDR10，映射到 SDR 时不做色调校正，画面发灰。</div>
+          </details>
+          <details>
+            <summary>修复版和原版应该选哪个</summary>
+            <div class="ans">修复版在划痕去除和颗粒保留上做了平衡，但字幕可能重新排版。想对照原始放映效果选原版；只想顺畅看一遍，修复版的画幅和音轨都更完整。技术信息栏会写明扫描分辨率与修复软件版本。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 用户评论 -->
+      <section class="section" id="comments">
+        <div class="sec-head">
+          <h2>影迷评价：来自条目页的留言</h2>
+          <span class="sub">按时间倒序</span>
+        </div>
+        <div class="comments">
+          <div class="comment">
+            <div class="c-head"><span class="avatar">林</span><span class="name">林间取景</span><time class="time" datetime="2026-11-07">11-07</time></div>
+            <p>《城南旧事》修复版雨夜那场戏，路灯晕光确实干净了不少。不过字幕字号变小，我 55 英寸电视得坐近一点才看清。</p>
+          </div>
+          <div class="comment">
+            <div class="c-head"><span class="avatar">周</span><span class="name">周末补片</span><time class="time" datetime="2026-11-06">11-06</time></div>
+            <p>《漫长的季节》第 12 集的时间线标记好用，但切换两遍就有点晕。第 12 集片尾曲多出 40 秒，差点以为卡了。</p>
+          </div>
+          <div class="comment">
+            <div class="c-head"><span class="avatar">陈</span><span class="name">陈小满</span><time class="time" datetime="2026-11-06">11-06</time></div>
+            <p>HDR 版发灰的问题在我家 2019 年的电视上出现了，按说明切 SDR 优先就好了。高光是丢了点，但总比整片灰蒙蒙强。</p>
+          </div>
+          <div class="comment">
+            <div class="c-head"><span class="avatar">宁</span><span class="name">宁海路口</span><time class="time" datetime="2026-11-05">11-05</time></div>
+            <p>说句不太顺耳的：4K 档在手机上真没看出区别，码率 21 Mbps 白费。后来一直用 720P，反而没卡过。</p>
+          </div>
+          <div class="comment">
+            <div class="c-head"><span class="avatar">阿</span><span class="name">阿禾</span><time class="time" datetime="2026-11-04">11-04</time></div>
+            <p>《悲情城市》要下架了，已缓存的还能看到 11 月 20 日。修复版比 2016 年那次清晰，但我不确定是重扫还是放大，技术信息栏没写扫描分辨率。</p>
+          </div>
+          <div class="comment">
+            <div class="c-head"><span class="avatar">木</span><span class="name">木鱼水心</span><time class="time" datetime="2026-11-03">11-03</time></div>
+            <p>《地球脉动》第三季第 3 集的纯环境音版本很适合工作背景音。就是切版本入口藏得有点深，在播放器右上角小齿轮里。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section class="section" id="news">
+        <div class="sec-head">
+          <h2>相关资讯</h2>
+        </div>
+        <div class="grid-3">
+          <div class="card"><div class="card-body"><h3>11 月片库版权变动汇总</h3><p>本月下架 9 部、续约 22 部，港片修复系列影响最大。</p><div class="meta"><span>11-04</span></div></div></div>
+          <div class="card"><div class="card-body"><h3>外挂字幕帧率锁定说明</h3><p>10 月 29 日上线的功能，涉及 312 个外挂 SRT 条目。</p><div class="meta"><span>10-29</span></div></div></div>
+          <div class="card"><div class="card-body"><h3>2026 年秋季新片入库节奏</h3><p>院线下线到入库的平均间隔 47 天，比上半年缩短 9 天。</p><div class="meta"><span>10-26</span></div></div></div>
+        </div>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section class="section" id="recommend">
+        <div class="sec-head">
+          <h2>相关推荐：按具体线索再找片</h2>
+        </div>
+        <div class="rec-tags">
+          <a href="/#featured">4K 修复版电影</a>
+          <a href="/#featured">双时间线悬疑剧集</a>
+          <a href="/#featured">韩语原声剧情片</a>
+          <a href="/#featured">纯环境音纪录片</a>
+          <a href="/#featured">港片修复系列</a>
+          <a href="/#featured">多语字幕条目</a>
+          <a href="/#featured">导演访谈收录</a>
+          <a href="/#featured">高帧率片源</a>
+          <a href="/#featured">外挂 SRT 字幕</a>
+          <a href="/#featured">2020 年后新片</a>
+        </div>
+      </section>
+
+      <!-- 补充：可信度分层 -->
+      <section class="section" id="credibility">
+        <div class="sec-head">
+          <h2>信息可信度分层：哪些说法能拿去引用</h2>
+        </div>
+        <div class="grid-3">
+          <div class="card"><div class="card-body"><h3>可直接核对的事实</h3><p>码率数值、字幕轨数量、上线日期、条目页技术信息栏字段。这些在播放器信息面板和条目页能直接看到。</p></div></div>
+          <div class="card"><div class="card-body"><h3>官方回应</h3><p>“SDR 优先”标签是 11 月 6 日为老型号电视发灰问题加的，属于站点侧调整，不是片源修复。</p></div></div>
+          <div class="card"><div class="card-body"><h3>用户转述与推测</h3><p>《悲情城市》修复版是否重扫，目前只有技术信息栏缺失字段这一条线索，结论待版权方或修复方说明。</p></div></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 侧栏 -->
+    <aside class="side" aria-label="侧栏导航">
+      <nav class="side-nav" id="sideNav" aria-label="本页栏目">
+        <h3>栏目导航</h3>
+        <a href="/#overview">片库概览</a>
+        <a href="/#featured">精选片单</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#category">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#compare">播放设置对照</a>
+        <a href="/#rank">本周播放榜</a>
+        <a href="/#timeline">片库时间线</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">影迷评价</a>
+        <a href="/#recommend">相关推荐</a>
+      </nav>
+      <div class="side-note">
+        <h3>播放小贴士</h3>
+        <ul>
+          <li>65 英寸以上再开 4K，手机用 720P 更稳</li>
+          <li>老电视遇到发灰，切“SDR 优先”</li>
+          <li>外挂字幕先对帧率，再微调延迟</li>
+          <li>投屏用 5GHz，4K 缓冲明显减少</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- 页尾 -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="brand">
+          <svg viewBox="0 0 64 64" role="img" aria-label="页尾品牌图形" width="34" height="34">
+            <rect x="3" y="3" width="58" height="58" rx="13" fill="#1a2a3a" stroke="#2b4157" stroke-width="2"/>
+            <rect x="13" y="19" width="38" height="26" rx="4" fill="none" stroke="#f2b53c" stroke-width="2.6"/>
+            <path d="M26 26.5l13 5.5-13 5.5z" fill="#f2b53c"/>
+          </svg>
+          <span class="brand-text" style="font-size:16px">eeuss影院www在线播放</span>
+        </div>
+        <p>整理片库分类、清晰度档位与播放设置，让观影准备工作少走弯路。</p>
+        <p style="margin-top:6px">页面更新：2026-11-08，对应《漫长的季节》第 12 集上线与 SDR 优先标签调整。</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h3>片库频道</h3>
+          <a href="/#featured">亚洲电影</a>
+          <a href="/#featured">欧美剧集</a>
+          <a href="/#featured">纪录片</a>
+          <a href="/#featured">剧场版动画</a>
+        </div>
+        <div>
+          <h3>观看帮助</h3>
+          <a href="/#guide">清晰度怎么选</a>
+          <a href="/#faq">字幕与投屏问题</a>
+          <a href="/#deep">修复版技术信息</a>
+          <a href="/#compare">播放设置对照</a>
+        </div>
+        <div>
+          <h3>近期动态</h3>
+          <a href="/#latest">最新更新</a>
+          <a href="/#rank">本周播放榜</a>
+          <a href="/#timeline">片库时间线</a>
+          <a href="/#news">相关资讯</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p class="sample">示例数据说明：片库条目数、码率、播放次数与更新日期均为演示用示例数据，非真实统计；版权变动与修复信息以实际条目页为准。</p>
+      <p>© 2026 eeuss影院www在线播放 · 保留所有权利</p>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  // 移动端菜单
+  var menuBtn = document.getElementById('menuBtn');
+  var mainNav = document.getElementById('mainNav');
+  menuBtn.addEventListener('click', function(){
+    var open = mainNav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mainNav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      mainNav.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded','false');
+    }
+  });
+
+  // 本地搜索
+  var input = document.getElementById('searchInput');
+  var btn = document.getElementById('searchBtn');
+  var fb = document.getElementById('searchFb');
+  var items = [
+    {t:'隐入尘烟 4K 修复版',k:'剧情 电影 甘肃 农村'},
+    {t:'漫长的季节',k:'悬疑 剧集 东北 时间线'},
+    {t:'分手的决心',k:'韩国 剧情 韩语原声'},
+    {t:'地球脉动 第三季',k:'纪录片 自然 环境音'},
+    {t:'城南旧事 4K 修复版',k:'经典 修复 上影厂'},
+    {t:'悲情城市 修复版',k:'港片 修复 版权下架'},
+    {t:'外挂 SRT 字幕',k:'字幕 帧率 偏移'},
+    {t:'纯环境音声道',k:'纪录片 背景音'},
+    {t:'SDR 优先标签',k:'HDR 电视 色彩映射'},
+    {t:'时间线标记',k:'剧集 双时间线 弹幕'}
+  ];
+  function doSearch(){
+    var q = input.value.trim().toLowerCase();
+    if(!q){
+      fb.innerHTML = '输入片名、演员或类型关键词，例如“修复”“悬疑”“环境音”。';
+      fb.classList.add('show');
+      return;
+    }
+    var hits = items.filter(function(it){
+      return it.t.toLowerCase().indexOf(q) > -1 || it.k.toLowerCase().indexOf(q) > -1;
+    });
+    if(hits.length === 0){
+      fb.innerHTML = '没有找到与 <strong>' + escapeHtml(q) + '</strong> 匹配的条目。可以换成类型名，或到<a href="/#category" style="color:var(--teal)">分类入口</a>按地区浏览。';
+    }else{
+      fb.innerHTML = '找到 ' + hits.length + ' 条：<br>' + hits.map(function(h){
+        return '· <a href="/#featured" style="color:var(--gold)">' + escapeHtml(h.t) + '</a>';
+      }).join('<br>');
+    }
+    fb.classList.add('show');
+  }
+  function escapeHtml(s){
+    return s.replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  btn.addEventListener('click', doSearch);
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ e.preventDefault(); doSearch(); } });
+  document.addEventListener('click', function(e){
+    if(!fb.contains(e.target) && e.target !== input && e.target !== btn){
+      fb.classList.remove('show');
+    }
+  });
+
+  // 回到顶部
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 600){ toTop.classList.add('show'); }
+    else { toTop.classList.remove('show'); }
+    highlight();
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // 侧栏滚动高亮
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var sections = sideLinks.map(function(a){
+    return document.querySelector(a.getAttribute('href').replace('/#','#'));
+  }).filter(Boolean);
+  function highlight(){
+    var y = window.scrollY + 130;
+    var idx = -1;
+    sections.forEach(function(sec, i){
+      if(sec.offsetTop <= y){ idx = i; }
+    });
+    sideLinks.forEach(function(a, i){
+      a.classList.toggle('active', i === idx);
+    });
+  }
+  highlight();
+})();
+</script>
+</body>
+  </html>
